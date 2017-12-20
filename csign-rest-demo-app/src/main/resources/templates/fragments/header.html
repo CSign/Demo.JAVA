@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:fragment="header-css">
+
+        <script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+    </div>
+</head>
+<body>
+
+<div th:fragment="header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/}">CSign Demo</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a th:href="@{/contact}">Contact</a></li>
+                </ul>
+                <div th:unless="${session.user}">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a th:href="@{/signUp}">Sign up</a></li>
+                        <li><a th:href="@{/login}">Log in</a></li>
+                    </ul>
+                </div>
+                <div th:if="${session.user}">
+                    <div th:unless="${session.id}">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a th:href="@{/signUp}">Sign up</a></li>
+                            <li><a th:ref="@{#}"><p th:text="${session.user}"></p></a></li>
+                            <li><a th:href="@{/logout}">Log off</a></li>
+                        </ul>
+                    </div>
+                    <div th:if="${session.id}">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a th:href="@{/view/{id}(id=${session.id})}"><p th:text="${session.user}"></p></a></li>
+                            <li><a th:href="@{/logout}">Log off</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+server:
+  port: 10000
+
+security:
+  basic:
+    enabled: false
+
+csign:
+  integration:
+    id: 57
+    key: 46435b6a-652d-41ee-8731-9e0342a4c329
+  login:
+    api:
+      url: http://integration.trunk.test.csign.se/CSign.Services.Integration/CSign.Services.Integration.svc
+  support:
+    email: info@csign.se
+
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false

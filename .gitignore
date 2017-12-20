@@ -1,0 +1,6 @@
+*.DS*
+*.iml
+*.iws
+*.ipr
+*.idea*
+/target*

@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Home Page - CSign Demo</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container body-content">
+    <h2>Person data</h2>
+    <div th:each="mapEntry : ${map}">
+        <div class="row">
+            <div class="col-md-4" th:text="${#strings.capitalizeWords(mapEntry.key)}"></div>
+            <div class="col-md-6" th:text="${mapEntry.value}"></div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

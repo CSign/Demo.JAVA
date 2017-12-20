@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Home Page - CSign Demo</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+    <script type="text/javascript">
+        window.onmessage = function (e) {
+            window.location.href = "/";
+        };
+    </script>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container body-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="margin: 20px 0 10px 0">We are a digital company that uses CSign!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet, felis vitae
+                pellentesque mattis, tortor massa cursus elit, at tempor nisl mi id quam. Duis suscipit placerat mi ac
+                euismod. Morbi turpis mauris, tempus et libero id, egestas auctor mauris. Nunc porttitor pellentesque
+                pretium. Sed nibh sem, egestas vitae erat non, auctor consectetur lorem. Pellentesque blandit orci ac
+                lorem porta efficitur. Morbi vel leo vel quam ultrices mollis. Cras cursus sed sem at malesuada. Donec
+                eget nisi non purus iaculis commodo nec at orci. Fusce quis purus ut arcu pretium suscipit ac lobortis
+                dolor.
+            </div>
+            <div class="col-md-6" id="loginForm">
+                <iframe th:src ="${loginUrl}"
+                        height="320" style="width: 100%; overflow-y: hidden; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

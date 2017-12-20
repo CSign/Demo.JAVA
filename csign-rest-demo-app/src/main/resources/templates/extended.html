@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-12">
+        Log in completed
+    </div>
+</div>
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function notifyParentAboutLogin() {
+	    var message = {
+            name:   'loginResult'
+        };
+	    window.parent.window.postMessage(message, '*')
+	};
+	$(document).ready(notifyParentAboutLogin);
+</script>

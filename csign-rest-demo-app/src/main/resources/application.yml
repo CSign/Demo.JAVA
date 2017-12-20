@@ -1,0 +1,22 @@
+server:
+  port: 11000
+
+security:
+  basic:
+    enabled: false
+
+csign:
+  rest:
+    service:
+        url: http://localhost:10000
+
+callback:
+  return:
+    url: http://localhost:11000/login/result/%s
+  extended:
+    url: http://localhost:11000/login/result/extended/%s
+
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false

@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Home Page - CSign Demo</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container body-content">
+
+    <h2>Contact.</h2>
+
+    <address>
+        Sveavägen 49<br/>
+        113 59 Stockholm<br/>
+        <abbr title="Phone">P:</abbr>
+        08-19 11 19
+    </address>
+
+    <address>
+        <strong>Support:</strong> <a href="mailto:support@csign.se">support@csign.se</a><br/>
+        <strong>Sales:</strong> <a href="mailto:peter.kallstrom@devcode.se">peter.kallstrom@devcode.se</a>
+    </address>
+</div>
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
+
